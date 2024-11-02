@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add a New Book</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<style>
+    /* Add Book Page Styles */
+form {
+  background-color: #fff;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+header nav a {
+  font-size: 18px;
+}
+
+</style>
+<body>
+  <header>
+    <h1>Add a New Book</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/add">Add New Book</a>
+    </nav>
+  </header>
+
+  <form action="/add" method="POST">
+    <label for="title">Book Title:</label><br>
+    <input type="text" id="title" name="title" required><br>
+
+    <label for="author">Author:</label><br>
+    <input type="text" id="author" name="author" required><br>
+
+    <label for="isbn">ISBN (for cover):</label><br>
+    <input type="text" id="isbn" name="isbn"><br>
+
+    <label for="rating">Rating (1-5):</label><br>
+    <input type="number" id="rating" name="rating" min="1" max="5" required><br>
+
+    <label for="date_read">Date Read:</label><br>
+    <input type="date" id="date_read" name="date_read" required><br>
+
+    <label for="notes">Notes:</label><br>
+    <textarea id="notes" name="notes"></textarea><br>
+
+    <button type="submit">Add Book</button>
+  </form>
+</body>
+</html>
